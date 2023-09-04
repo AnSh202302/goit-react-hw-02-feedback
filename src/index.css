@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f4f4;
 }
 
 code {
@@ -21,4 +22,16 @@ h1,
 h2,
 h3 {
   margin: 0;
+}
+#root {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+
+  background-color: #7facd4;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #747272;
 }

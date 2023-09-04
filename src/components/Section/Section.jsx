@@ -1,9 +1,10 @@
+import { Title } from './Section.styled';
 const Section = ({ title, children }) => {
   return (
-    <>
-      <h2>{title}</h2>
+    <section>
+      <Title>{title}</Title>
       {children}
-    </>
+    </section>
   );
 };
 export default Section;
