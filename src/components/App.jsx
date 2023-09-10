@@ -10,16 +10,10 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
+  onLeaveFeedback = name => {
+    this.setState(prevState => ({ [name]: prevState[name] + 1 }));
+  };
 
-  hendleGood = () => {
-    this.setState(prevState => ({ good: prevState.good + 1 }));
-  };
-  hendleNeutral = () => {
-    this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-  };
-  hendleBad = () => {
-    this.setState(prevState => ({ bad: prevState.bad + 1 }));
-  };
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
@@ -33,9 +27,7 @@ class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     const {
-      hendleGood,
-      hendleNeutral,
-      hendleBad,
+      onLeaveFeedback,
       countTotalFeedback,
       countPositiveFeedbackPercentage,
     } = this;
@@ -43,9 +35,8 @@ class App extends Component {
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onGood={hendleGood}
-            onNeutral={hendleNeutral}
-            onBad={hendleBad}
+            options={Object.keys(this.state)}
+            onLeaveFeedback={onLeaveFeedback}
           />
         </Section>
 
